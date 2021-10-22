@@ -1,0 +1,22 @@
+{
+  "name": "customvideoplayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petar-antic/customVideoPlayer.git"
+  },
+  "author": "petar_antic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petar-antic/customVideoPlayer/issues"
+  },
+  "homepage": "https://github.com/petar-antic/customVideoPlayer#readme",
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
