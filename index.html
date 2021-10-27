@@ -5,10 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Video Player</title>
-    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" />
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
+    <div class="player">
+      <video class="video" src="assets/video480.webm"></video>
+      <div class="controlBar">
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+        <div class="buttons">
+          <div class="speakerBar">
+            <div class="speaker"></div>
+            <div class="volumeBar">
+              <input
+                type="range"
+                class="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+              />
+            </div>
+          </div>
+          <div class="playBox">
+            <div class="play"></div>
+          </div>
+          <div class="rightSide">
+            <select name="speeds" class="speeds">
+              <option value="superSlow">0.5x</option>
+              <option value="slow">0.75x</option>
+              <option value="normal" selected="">1x</option>
+              <option value="fast">1.5x</option>
+              <option value="superFast">2x</option>
+            </select>
+            <div class="fullScreen"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="app.js"></script>
+  <script src="player.js"></script>
 </html>
