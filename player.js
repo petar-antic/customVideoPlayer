@@ -13,26 +13,6 @@ const play = document.querySelector('.play');
 const playbackSpeed = document.querySelector('.speeds');
 const fullScreen = document.querySelector('.fullScreen');
 
-speaker.addEventListener('click', function () {
-  if (video.muted === false) {
-    speaker.classList.toggle('mute');
-    video.muted = true;
-  } else {
-    speaker.classList.toggle('mute');
-    video.muted = false;
-  }
-});
-
-play.addEventListener('click', function () {
-  if (video.paused) {
-    play.classList.toggle('pause');
-    video.play();
-  } else {
-    play.classList.toggle('pause');
-    video.pause();
-  }
-});
-
 function updateProgress(e) {
   const percent = (video.currentTime / video.duration) * 100;
   progress.style.width = `${percent}%`;
@@ -53,6 +33,25 @@ function openFullScreen() {
     document.exitFullscreen();
   } else {
     player.requestFullscreen();
+  }
+}
+function muteVideo() {
+  if (video.muted === false) {
+    speaker.classList.toggle('mute');
+    video.muted = true;
+  } else {
+    speaker.classList.toggle('mute');
+    video.muted = false;
+  }
+}
+
+function pauseVideo() {
+  if (video.paused) {
+    play.classList.toggle('pause');
+    video.play();
+  } else {
+    play.classList.toggle('pause');
+    video.pause();
   }
 }
 
@@ -80,5 +79,7 @@ video.addEventListener('timeupdate', updateProgress);
 progressBar.addEventListener('click', setProgress);
 volume.addEventListener('mousemove', setVolume);
 volume.addEventListener('touchmove', setVolume);
+play.addEventListener('click', pauseVideo);
+speaker.addEventListener('click', muteVideo);
 fullScreen.addEventListener('click', openFullScreen);
 playbackSpeed.addEventListener('change', changePlaybackSpeed);
