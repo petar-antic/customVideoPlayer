@@ -1,6 +1,7 @@
 const player = document.querySelector('.player');
 const video = document.querySelector('.video');
 
+const controlBar = document.querySelector('.controlBar');
 const progressBar = document.querySelector('.progressBar');
 const progress = document.querySelector('.progress');
 
@@ -12,6 +13,10 @@ const play = document.querySelector('.play');
 
 const playbackSpeed = document.querySelector('.speeds');
 const fullScreen = document.querySelector('.fullScreen');
+
+function visibleControlBar() {
+  controlBar.classList.toggle('visible');
+}
 
 function updateProgress(e) {
   const percent = (video.currentTime / video.duration) * 100;
@@ -58,7 +63,7 @@ function pauseVideo() {
 function changePlaybackSpeed() {
   switch (playbackSpeed.value) {
     case 'superSlow':
-      console.log('superSlow');
+      video.playbackRate = 0.5;
       break;
     case 'slow':
       video.playbackRate = 0.75;
@@ -75,6 +80,8 @@ function changePlaybackSpeed() {
   }
 }
 
+player.addEventListener('mouseover', visibleControlBar);
+player.addEventListener('mouseout', visibleControlBar);
 video.addEventListener('timeupdate', updateProgress);
 progressBar.addEventListener('click', setProgress);
 volume.addEventListener('mousemove', setVolume);

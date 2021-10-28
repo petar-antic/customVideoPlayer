@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Frank Ruhl Libre", serif;
 }
 * body {
   height: 100vh;
@@ -23,12 +25,7 @@
   width: 100%;
   bottom: 9px;
   padding: 0px 15px;
-  transition: 1.5s all;
-  opacity: 0;
-}
-* body .player .controlBar:hover {
-  transition: 1.5s all;
-  opacity: 1;
+  display: none;
 }
 * body .player .controlBar .progressBar:hover,
 * body .player .controlBar .progress:hover,
@@ -53,7 +50,7 @@
 * body .player .controlBar .progressBar .progress {
   position: absolute;
   border-radius: 5px;
-  background: #0075ff;
+  background-color: rgba(0, 117, 255, 0.7);
   height: 10px;
   width: 0%;
 }
@@ -118,7 +115,7 @@
     margin-top: 4px;
     width: 10px;
     height: 10px;
-    background-color: #0075ff;
+    background-color: rgba(0, 117, 255, 0.7);
   }
 }
 * body .player .controlBar .buttons .playBox {
@@ -148,28 +145,28 @@
   border: none;
   color: #fcfcfc;
   -webkit-appearance: none;
-  background: rgba(0, 117, 255, 0.7);
+  background-color: rgba(0, 117, 255, 0.7);
   padding: 2px 3.5px 2px 2px;
   outline: none;
-  font-weight: bold;
+  font-weight: 700;
 }
 @media only screen and (max-width: 480px) {
   * body .player .controlBar .buttons .rightSide .speeds {
     padding: 0;
-    font-weight: normal;
+    font-weight: 500;
   }
 }
 * body .player .controlBar .buttons .rightSide .speeds option {
   border: none;
   outline: none;
-  font-weight: bold;
-  background: rgba(0, 117, 255, 0.7);
+  font-weight: 700;
+  background-color: rgba(0, 117, 255, 0.7);
   padding: 2px 0;
 }
 @media only screen and (max-width: 480px) {
   * body .player .controlBar .buttons .rightSide .speeds option {
     padding: 0;
-    font-weight: normal;
+    font-weight: 500;
     width: 12px;
   }
 }
@@ -180,6 +177,10 @@
   * body .player .controlBar .buttons .rightSide .fullScreen {
     width: 12px;
   }
+}
+* body .player .visible {
+  transition: 1.5s all;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
