@@ -1,0 +1,26 @@
+// // // Typography
+
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&display=swap');
+
+// Font
+$fontFamily: 'Frank Ruhl Libre', serif;
+
+$font: (
+  weight: (
+    regular: 500,
+    bold: 700,
+  ),
+);
+
+// // Colors
+
+$color: (
+  primary: (
+    blue: rgba(0, 117, 255, 0.7),
+    progress: rgba(255, 255, 255, 0.2),
+  ),
+  background: (
+    gradient:
+      radial-gradient(circle, rgba(73, 4, 144, 1) 0%, rgba(0, 0, 0, 1) 100%),
+  ),
+);
